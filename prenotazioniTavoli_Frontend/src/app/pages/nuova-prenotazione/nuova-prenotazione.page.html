@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+        <ion-icon size="large" routerLink="/info-account/{{usernameCliente}}" name="person-circle-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-text-center">
+  <h5>Prenotazione presso: {{nomeRistornate}}</h5>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text"name="nome" id="nome" [(ngModel)]="prenotazione.nome" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Posti</ion-label>
+      <ion-input [(ngModel)]="prenotazione.numGuest" name="numGuest" type="text" id="numGuest"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data prenotazione</ion-label>
+      <ion-input [(ngModel)]="prenotazione.dataPrenotazione" name="dataPrenotazione" type="text" id="dataPrenotazione"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Orario</ion-label>
+      <ion-select  [(ngModel)]="prenotazione.start" name="start" id="start">
+        <ion-select-option value="11:00">11:00</ion-select-option>
+        <ion-select-option value="12:00">12:00</ion-select-option>
+        <ion-select-option value="13:00">13:00</ion-select-option>
+        <ion-select-option value="14:00">14:00</ion-select-option>
+        <ion-select-option value="19:00">19:00</ion-select-option>
+        <ion-select-option value="20:00">20:00</ion-select-option>
+        <ion-select-option value="21:00">21:00</ion-select-option>
+        <ion-select-option value="22:00">22:00</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" ><ion-button  ion-button type="submit" color="success">Prenota</ion-button>
+        <ion-button   fill="outline"ion-button type="reset" color="dark" >Cancella</ion-button></ion-col>
+      </ion-row>
+ 
+    </ion-grid>
+  </form>
+
+
+</ion-content>

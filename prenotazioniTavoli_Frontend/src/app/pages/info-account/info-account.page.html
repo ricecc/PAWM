@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content  class="d-flex justify-content-center">
+  <ion-card>
+    <ion-card-header>
+     
+      <ion-card-title class="ion-text-center">Le tue info</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     <ion-item><ion-label>Nome: {{cliente.nome}}</ion-label></ion-item>
+     <ion-item><ion-label>Congome: {{cliente.cognome}}</ion-label></ion-item>
+     <ion-item><ion-label>Username: {{cliente.username}}</ion-label></ion-item>
+     <ion-item><ion-label>Email: {{cliente.email}}</ion-label></ion-item>
+     <ion-item><ion-label>Citta: {{cliente.citta}}</ion-label></ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

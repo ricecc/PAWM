@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <p style="padding-left:10px;">Torna alla home</p>
+    <ion-buttons slot="start">
+      <ion-icon routerLink="" size="large" name="arrow-back-circle-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <div class="formMarginTop">
+    <h1>Registrati</h1>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label>Nome</ion-label>
+      <ion-input type="text" name="nome" id="nome" [(ngModel)]="newCliente.nome" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cognome</ion-label>
+      <ion-input type="text"name="cognome" id="cognome" [(ngModel)]="newCliente.cognome" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input type="text"name="username" id="username" [(ngModel)]="newCliente.username" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input color="ligth" type="text"name="email" id="email" [(ngModel)]="newCliente.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Citta</ion-label>
+      <ion-input type="text"name="citta" id="citta" [(ngModel)]="newCliente.citta" ></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input type="password"name="password" id="password" [(ngModel)]="newCliente.password" ></ion-input>
+    </ion-item>
+    <br>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" ><ion-button  ion-button type="submit" color="tertiary">Registrati</ion-button>
+        <ion-button   fill="outline"ion-button type="reset" color="tertiary" >Cancella</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</div>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon size="large" routerLink="/info-account/{{usernameCliente}}" name="person-circle-outline"></ion-icon>
+  </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="d-flex justify-content-center">
+  
+  <ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+      <ion-title>
+        Prenotazioni di {{usernameCliente}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-margin">
+    <ion-grid class="ion-margin">
+      <ion-row>
+        <ion-col>Nome</ion-col>
+        <ion-col>Ristorante</ion-col>
+        <ion-col>Persone</ion-col>
+        <ion-col>Data</ion-col>
+        <ion-col>Ora</ion-col>
+        <ion-col>Azione</ion-col>
+      </ion-row>
+     <ion-row *ngFor="let prenotazione of prenotazioni">
+        <ion-col>{{ prenotazione.nome}}</ion-col>
+        <ion-col>{{ prenotazione.nomeRistorante}}</ion-col>
+        <ion-col>{{ prenotazione.numGuest}}</ion-col>
+        <ion-col>{{ prenotazione.dataPrenotazione}}</ion-col>
+        <ion-col>{{ prenotazione.start}}</ion-col>
+        <ion-col><ion-button (click) = "cancella(prenotazione.id)"color="tertiary">Cancella</ion-button>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+</ion-content>
