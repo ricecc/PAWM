@@ -17,9 +17,11 @@ tokenFileds = {
   constructor(private loginService: LoginService, private tokenService: TokenService) { }
 
   ngOnInit() {
-    this.loggedIn=this.loginService.isLoggedIn();
-    this.tokenFileds.token = this.tokenService.getToken();
-    this.getUsernameByToken();
+    this.loggedIn = this.loginService.isLoggedIn();
+    if(this.loggedIn){
+      this.tokenFileds.token = this.tokenService.getToken();
+      this.getUsernameByToken();
+    }
   }
 
   logoutUser(){

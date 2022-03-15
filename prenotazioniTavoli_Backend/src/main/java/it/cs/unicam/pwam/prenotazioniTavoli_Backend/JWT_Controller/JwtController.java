@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @CrossOrigin(origins ="*" )
 public class JwtController {
@@ -66,5 +68,7 @@ public class JwtController {
         String username = this.jwtTokenUtil.extractUsername(getToken);
         return ResponseEntity.ok(new JwtResponse(getToken,username));
     }
+
+
 
 }
